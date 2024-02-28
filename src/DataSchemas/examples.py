@@ -55,14 +55,14 @@ task_logic_settings = task_logic.BciNoMovementTaskLogic(
     reward_consume_time=2,
     valve_open_time=0.1,
     wait_for_lick=True,
-    far_position_offset=30,
-    manipulator_reset_position=task_logic.Point3d(x=43, y=-2, z=0.26),
+    far_position_offset=2,
+    manipulator_reset_position=task_logic.Point3d(x=5, y=0, z=0),
     wait_microscope_time=0.5,
-    bci_passive_control=task_logic.Control(gain=0.002, baseline_threshold=5000),
+    bci_passive_control=task_logic.Control(gain=0.1, baseline_threshold=5000),
     no_movement_passive_control=task_logic.Control(
-        gain=0.002, baseline_threshold=5000, low_pass_cut_off=50, high_pass_cut_off=0.001
+        gain=0.5, baseline_threshold=250, low_pass_cut_off=50, high_pass_cut_off=0.001
     ),
-    bci_active_control=task_logic.Control(gain=0.001, baseline_threshold=1.5),
+    bci_active_control=task_logic.Control(gain=0.5, baseline_threshold=1.5),
     skip_2p_handshake=True,
     punish_on_movement_duration=0.1,
 )
